@@ -16,7 +16,7 @@ function Weather() {
       fetch(`https://wttr.in/${textInput}?format=%C+%t+%w`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Ups! I couldn’t find that one, please try againnnnnnn!');
+          throw new Error('Ups! I couldn’t find that one, please try again!');
         }
         return response.text();
       })
