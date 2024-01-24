@@ -1,0 +1,64 @@
+#DetailsWeatherBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(6, 119, 144);
+  width: 20%;
+  height: 50%;
+  margin-top: 250px;
+  margin-left: 40%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+#inputSearchBox {
+  margin: 25px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("../src/assets/Lx0q.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* ///////////////ressponsiv */
+
+/* Estilos para pantallas grandes */
+#DetailsWeatherBox {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Estilos para pantallas medianas */
+  @media screen and (max-width: 768px) {
+    #DetailsWeatherBox {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media screen and (max-width: 480px) {
+    #DetailsWeatherBox {
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+input{
+    width: 50%;
+}
+
+button{
+    width: 60px;
+}
+
+input,
+button{
+margin: 0 5px 0 5px
+}
