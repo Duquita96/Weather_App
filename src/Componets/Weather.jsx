@@ -7,6 +7,8 @@ function Weather() {
   const [textInput, setTextInput] = useState("");
   const [error, setError] = useState(null);
 
+
+
   const handleInputChange = (event) => {
     setTextInput(event.target.value);
   };
@@ -21,9 +23,10 @@ function Weather() {
           return response.text();
         })
         .then((data) => {
-          const weather = data.split(" ");
-          const wind = weather.pop();
-          const temperature = weather.pop();
+          const dataArray = data.split(" ");
+          const wind = dataArray.pop();
+          const temperature = dataArray.pop();
+          const weather = dataArray.toString().replace(/,/g, " ");
           setWeatherData({ weather, temperature, wind });
           setError(null);
         })
