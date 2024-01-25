@@ -13,22 +13,24 @@ function Weather() {
 
   const handleSearchClick = () => {
     if (textInput !== "") {
-      fetch(`https://wttr.in/${textInput}?format=%C+%t+%w`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Ups! I couldn’t find that one, please try again!');
-        }
-        return response.text();
-      })
-      .then((data) => {
-        const [weather, temperature, wind] = data.split(' ');
-        setWeatherData({weather, temperature, wind});
-        setError(null);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setError(error.message);
-      });
+      fetch(`https://wttr.in/${textInput}?format=%C+%T+%w&lang=en`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Ups! I couldn’t find that one, please try again!");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          const weather = data.split(" ");
+          const wind = weather.pop();
+          const temperature = weather.pop();
+          setWeatherData({ weather, temperature, wind });
+          setError(null);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          setError(error.message);
+        });
     }
   };
 
@@ -50,7 +52,6 @@ function Weather() {
       )}
       {weatherData && (
         <div>
-          <p>{weatherData.weather}</p>
           <WeatherDetails weatherData={weatherData} />
         </div>
       )}
