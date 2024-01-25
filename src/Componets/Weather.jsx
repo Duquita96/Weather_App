@@ -15,7 +15,8 @@ function Weather() {
 
   const handleSearchClick = () => {
     if (textInput !== "") {
-      fetch(`https://wttr.in/${textInput}?format=%C+%T+%w&lang=en`)
+      //fetch(`https://wttr.in/${textInput}?format=%C+%t+%w&lang=en`)
+      fetch(`https://wttr.in/${textInput}?format=%C+%t+%w&lang=en`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Ups! I couldn’t find that one, please try again!");

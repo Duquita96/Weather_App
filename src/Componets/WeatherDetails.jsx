@@ -1,19 +1,26 @@
 // WeatherDetails.jsx
 import React from "react";
 
+const weatherCase = ["Partly cloudy", "Sunny", "Cloudy", "Rainy", "Overcast"];
+
+const bGAddress =["Partlycloudy.gif", "Sunny.gif", "Cloudy.gif", "Rainy.gif", "Overcast.gif", "extra.gif"]
+
+
 function WeatherDetails({ weatherData }) {
   const wind = weatherData ? weatherData.wind : "N/A";
   const temperature = weatherData ? weatherData.temperature : "N/A";
   const weather = weatherData ? weatherData.weather : "N/A";
-  const weatherCase = ["Partlycloudy", "Sunny", "Cloudy", "Rainy", "Overcast"];
-
+  let mapPos = weatherCase.indexOf(weather);
+console.log("mapPos: ", mapPos);
   const elementBody = document.getElementsByTagName("body")[0];
-  elementBody.style.backgroundImage = "url('../src/assets/Partlycloudy.gif')";
-  //cambiar el fondo del body sin condicion
+  if(mapPos === -1){
+    mapPos = bGAddress.length-1;
+    }
+    console.log("mapPos: ", mapPos);
 
-  console.log("weather en WD.jsx: ", typeof weather, weather);
-  console.log("weatherCase: ", typeof weatherCase, weatherCase);
-  console.log("cond: ", weather === weatherCase ? "claudiaaaa" : "pepe");
+
+  elementBody.style.backgroundImage = `url('../src/assets/${bGAddress[mapPos]}')`;
+ 
 
   return (
     <div>
