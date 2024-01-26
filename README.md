@@ -1,6 +1,6 @@
 
-# Library-Catalog
-The idea is to make a app that you could use to catalog all your e-books
+# Wearher App
+The idea is to make a app that you could use to see the weather
 
 # React + Vite
 
