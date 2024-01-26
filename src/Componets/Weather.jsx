@@ -7,15 +7,12 @@ function Weather() {
   const [textInput, setTextInput] = useState("");
   const [error, setError] = useState(null);
 
-
-
   const handleInputChange = (event) => {
     setTextInput(event.target.value);
   };
 
   const handleSearchClick = () => {
     if (textInput !== "") {
-      //fetch(`https://wttr.in/${textInput}?format=%C+%t+%w&lang=en`)
       fetch(`https://wttr.in/${textInput}?format=%C+%t+%w&lang=en`)
         .then((response) => {
           if (!response.ok) {
@@ -24,10 +21,18 @@ function Weather() {
           return response.text();
         })
         .then((data) => {
+          console.log("data: ", "`", data, "`");
           const dataArray = data.split(" ");
           const wind = dataArray.pop();
           const temperature = dataArray.pop();
-          const weather = dataArray.toString().replace(/,/g, " ");
+
+          let weather = "";
+          dataArray.forEach(function (elemento) {
+            weather += elemento + " ";
+          });
+
+          weather = weather.substring(0, weather.length - 1);
+
           setWeatherData({ weather, temperature, wind });
           setError(null);
         })

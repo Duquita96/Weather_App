@@ -14,9 +14,15 @@ function Timer() {
   });
 
   return (
-    <div>
+
+<div>
+      <div>
       <h2>Local Time: {time.toLocaleTimeString()}.</h2>
     </div>
+</div>
+
+
+
   );
 }
 
