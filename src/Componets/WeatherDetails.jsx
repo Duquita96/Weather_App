@@ -1,9 +1,9 @@
 // WeatherDetails.jsx
 import React from "react";
 
-const weatherCase = ["Partly cloudy", "Sunny", "Cloudy", "Rainy", "Overcast", "Light snow, mist", "Clear"];
+const weatherCase = ["Partly cloudy", "Sunny", "Cloudy", "Rainy", "Overcast", "Light snow, mist", "Clear", "Mist"];
 
-const bGAddress =["Partlycloudy.gif", "Sunny.gif", "Cloudy.gif", "Rainy.gif", "Overcast.gif", "Lightsnowmist.gif", "Clear.gif", "extra.gif"]
+const bGAddress =["Partlycloudy.gif", "Sunny.gif", "Cloudy.gif", "Rainy.gif", "Overcast.gif", "Lightsnowmist.gif", "Clear.gif", "Mist.gif", "extra.gif"]
 
 
 function WeatherDetails({ weatherData }) {
